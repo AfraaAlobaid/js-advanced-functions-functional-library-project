@@ -12,11 +12,12 @@ const fi = (function() {
     },
 
     map: function(iterable, callback) {
-      let resultIterable;
+      let result = [];
+      //let count = 0;
       for (const index in iterable){
-        resultIterable[index] = callback(iterable[index]);
+        result.push(callback(iterable[index]));
       }
-      return resultIterable;
+      return result;
     },
 
     reduce: function() {
