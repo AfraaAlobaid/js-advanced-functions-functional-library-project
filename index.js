@@ -34,6 +34,31 @@ const fi = (function () {
       return acc;
     },
 
+    find: function (collection, predicate){
+      for (const index in collection){
+        if (predicate(collection[index]))
+          return collection[index];
+      }
+      return undefined;
+    },
+
+    filter: function (collection, predicate){
+      let result = [];
+      for (const index in collection){
+        if (predicate(collection[index]))
+          result.push(collection[index]);
+      }
+      return result;
+    },
+
+    size: function(collection){
+      let count = 0;
+      for (const index in collection){
+        count++;
+      }
+      return count;
+    },
+
     functions: function () {},
   };
 })();
