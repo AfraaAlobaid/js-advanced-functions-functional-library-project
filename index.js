@@ -152,9 +152,28 @@ const fi = (function () {
       }
       return result;
     },
-    functions: function () {},
+
+    values: function (obj){
+      let result = [];
+      for (const key in obj){
+        result.push(obj[key]);
+      }
+      return result;
+    },
+
+    functions: function (obj) {
+      let result = [];
+      for (const key in obj){
+        if(typeof obj[key] === 'function')
+          result.push(key);
+      }
+      result.sort();
+      return result;
+    },
+
+    key: 1,
   };
 })();
 
 fi.libraryMethod();
-fi.flatten([1, [2, 3], [[4, 5], 6, [7, [8, 9]]]], true);
+
