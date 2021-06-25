@@ -144,6 +144,14 @@ const fi = (function () {
       console.log(result);
       return result;
     },
+
+    keys: function (obj){
+      let result = [];
+      for (const key in obj){
+        result.push(key);
+      }
+      return result;
+    },
     functions: function () {},
   };
 })();
